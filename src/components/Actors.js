@@ -4,7 +4,14 @@ import { actors } from '../data';
 const Actors = () => {
   return (
     <div>
-      {/*{code here}*/}
+      <h1>Actors Page</h1>
+      {actors.map(actor => {
+          return (
+          <div key={actors.indexOf(actor)}>
+            {actor.name}
+            <ul>{actor.movies.map(movie => <li key={actor.movies.indexOf(movie)}>{movie}</li>)}</ul>
+          </div>)
+          })}
     </div>
   );
 };
